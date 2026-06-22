@@ -1,0 +1,50 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+
+    container_name: url-shortner-backend
+
+    ports:
+      - "3000:3000"
+    
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=vivek
+      - DB_PASSWORD=password
+      - DB_NAME=url_shortner
+
+    depends_on:
+      postgres:
+          condition: service_healthy
+
+  postgres:
+    image: postgres:17-alpine
+
+    container_name: url-shortner-db
+
+    ports:
+      - "5432:5432"
+    
+    environment:
+      POSTGRES_USER: vivek
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: url_shortner
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vivek"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
