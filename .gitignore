@@ -1,0 +1,152 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+**/node_modules/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Build Output
+# =========================
+
+# Next.js
+.next/
+out/
+
+# Node.js / Express
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# =========================
+# Database
+# =========================
+
+# PostgreSQL dumps / backups
+*.sql
+*.dump
+*.backup
+
+# Local database files (if any)
+*.sqlite
+*.sqlite3
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Runtime / Process Files
+# =========================
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# =========================
+# Testing
+# =========================
+coverage/
+.nyc_output/
+
+# Jest
+jest.config.js.snap
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# =========================
+# Cache Files
+# =========================
+.cache/
+.parcel-cache/
+
+# Next.js cache
+.next/cache/
+
+# ESLint cache
+.eslintcache
+
+# =========================
+# Uploads / Temp Files
+# =========================
+uploads/
+tmp/
+temp/
+
+# =========================
+# Docker (if using)
+# =========================
+.dockerignore
+
+# Docker volumes / local data
+docker-data/
+postgres-data/
+
+# =========================
+# PM2 (if using)
+# =========================
+.pm2/
+
+# =========================
+# Misc
+# =========================
+*.tgz
+*.gz
+
+# =========================
+# Vercel / Deployment
+# =========================
+.vercel/
+
+# =========================
+# Secrets / Keys
+# =========================
+*.pem
+*.key
+*.crt
+
+# =========================
+# Optional Monorepo Structure
+# If structure is:
+# /backend
+# /frontend
+# =========================
+
+backend/node_modules/
+backend/dist/
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
